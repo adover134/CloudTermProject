@@ -1,0 +1,11 @@
+---
+- hosts: tag_Group_aliveManager
+  become_user: root
+  become: yes
+  tasks:
+  - name: print condor_status
+    shell: "condor_status"
+    register: print_status
+
+  - debug:
+      var: print_status.stdout_lines

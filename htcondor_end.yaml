@@ -1,0 +1,7 @@
+---
+- hosts: tag_Group_aliveManager
+  become_user: root
+  become: yes
+  tasks:
+  - name: stop HTCondor
+    shell: "condor_off -all"
